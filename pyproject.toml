@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "pipeline-elt"
+version = "0.1.0"
+description = "Create an ELT pipeline using containerization to build a base environment with Docker, utilizing Snowflake as the data warehouse, and organizing the workflow in an Airflow DAG."
+authors = ["Mateus Broilo <fratello.broilo@gmail.com>"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = ">=3.12, <3.13"
+python-dotenv = "^1.0.1"
+ipykernel = "^6.29.5"
+setuptools = "^75.1.0"
+dbt-snowflake = "^1.8.8"
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.29.5"
+pyright = "^1.1.379"
+ruff = "^0.6.4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pyright]
+venv = ".venv"
+venvPath = "."
+typeCheckingMode = "strict"
+include = ["src", "notebooks"]
